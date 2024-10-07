@@ -1,16 +1,24 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BrowserScreen from './screens/BrowserScreen';
+import React, { useEffect } from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
+import WebView from 'react-native-webview';
 
-const Stack = createNativeStackNavigator();
+const SPLASH_SCREEN_DELAY = 2000;
+
+const styles = StyleSheet.create({
+  safearea: { flex: 1, backgroundColor: '#fff' },
+});
 
 export default function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, SPLASH_SCREEN_DELAY);
+  });
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={BrowserScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={styles.safearea}>
+      <WebView source={{ uri: `https://test.ondaji.com/villages` }} webviewDebuggingEnabled />
+    </SafeAreaView>
   );
 }
