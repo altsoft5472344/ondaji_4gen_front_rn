@@ -473,6 +473,8 @@
 				DEVELOPMENT_TEAM = DXYY9WZCZM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ondaji_4gen_front_rn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "온닫이";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,6 +502,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DXYY9WZCZM;
 				INFOPLIST_FILE = ondaji_4gen_front_rn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "온닫이";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
