@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import WebView from 'react-native-webview';
 
@@ -18,8 +18,16 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.safearea}>
-      <Text>RN 스플래시</Text>
-      <WebView source={{ uri: `https://test.ondaji.com/villages` }} webviewDebuggingEnabled />
+      <WebView
+        source={{
+          uri:
+            Platform.OS === 'android'
+              ? `http://10.0.2.2:3000/onboarding`
+              : `http://localhost:3000/onboarding`,
+        }}
+        webviewDebuggingEnabled
+        scrollEnabled={false}
+      />
     </SafeAreaView>
   );
 }
